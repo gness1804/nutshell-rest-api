@@ -24,7 +24,7 @@ const hitAPI = () => {
 
 app.get('/getpeople/:i', (request, response) => {
   hitAPI().then((data) => {
-    console.log(data)
+    response.send(data.data)
   })
 });
 
