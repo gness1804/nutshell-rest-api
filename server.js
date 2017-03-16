@@ -14,9 +14,9 @@ app.set('port', process.env.PORT || 3000);
 app.locals.title = 'People Search'
 
 app.get('/', (request, response) => {
-  response.sendFile(path.join(__dirname, 'index.html'));
+  response.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 app.listen(app.get('port'), () => {
-    console.log();
+    console.log('Server running on port 3000.');
 });
