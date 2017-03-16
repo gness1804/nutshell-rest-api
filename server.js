@@ -14,7 +14,7 @@ app.set('port', process.env.PORT || 3000);
 app.locals.title = 'People Search'
 
 app.get('/', (request, response) => {
-  response.send('');
+  response.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(app.get('port'), () => {
