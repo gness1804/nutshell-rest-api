@@ -20,9 +20,11 @@ const appendPeopleToDOM = (people) => {
   peopleList.html('')
   people.forEach((person) => {
     peopleList.append(`
-    <h2>Name: ${person.name}</h2>
-    <p>Email: ${person.email}</p>
-    <p>Signup Date: ${person.signup_date}</p>
+    <div class="person-container">
+      <h2>Name: ${person.name}</h2>
+      <p>Email: ${person.email}</p>
+      <p>Signup Date: ${person.signup_date}</p>
+    </div>
     `)
   });
 }
