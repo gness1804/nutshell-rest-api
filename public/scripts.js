@@ -9,8 +9,25 @@ const pushObjectsIntoMasterArray = (data) => {
   }
 }
 
+const filterOutNullEmails = (data) => {
+  return data.filter((obj) => {
+    return obj.email !== null
+  })
+}
+
+const appendPeopleToDOM = (people) => {
+  return people
+}
+
 const findFiveMostRecentPeople = (data) => {
-  return data
+  const filteredData = filterOutNullEmails(data)
+  const dataWithRawDates = filteredData.map((obj) => {
+    return Object.assign(obj, { rawDate: new Date(obj.signup_date).getTime() })
+  });
+  const fiveNewestPeople = dataWithRawDates.sort((a, b) => {
+    return b.rawDate - a.rawDate
+  }).slice(0, 5)
+  appendPeopleToDOM(fiveNewestPeople)
 }
 
 const getPeople = () => {
