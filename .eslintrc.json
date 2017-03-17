@@ -21,7 +21,7 @@
 		"react/jsx-no-bind": "off",
     "semi": "off",
     "no-plusplus": "off",
-    "consisten-return": "off"
+    "consistent-return": "off"
   },
   "parser": "babel-eslint"
 }
