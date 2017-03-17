@@ -1,0 +1,20 @@
+html {
+  background-color: rgb(178, 231, 242);
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+#main-button {
+  border-radius: 5px;
+  margin: 20px auto;
+  padding: 5px;
+}
+
+#main-button:hover {
+  background-color: #FFF;
+  cursor: pointer;
+}
+
+.person-container {
+  margin: 40px auto;
+}
