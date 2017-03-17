@@ -33,13 +33,43 @@ describe('get /', function () {
       });
   });
 
-  it('getpeople should be a valid path', function () {
+});
+
+describe('getpeople route', function () {
+  it('should be a valid endpoint', function () {
     request(app)
       .get('/getpeople/1')
       .end(function(error, result) {
        result.should.have.status(200)
        done();
      });
+  });
+
+  it('should return an array', function () {
+    request(app)
+      .get('/getpeople/1')
+      .end(function(error, result) {
+        result.should.be.a('array');
+        done();
+      });
+  });
+
+  it('other getpeople endpoints should also be valid', function () {
+    request(app)
+      .get('/getpeople/3')
+      .end(function(error, result) {
+       result.should.have.status(200)
+       done();
+     });
+  });
+
+  it('other getpeople endpoint should also return an array', function () {
+    request(app)
+      .get('/getpeople/4')
+      .end(function(error, result) {
+        result.should.be.a('array');
+        done();
+      });
   });
 
 });
