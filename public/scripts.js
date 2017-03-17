@@ -1,4 +1,5 @@
-const mainButton = document.querySelector('#main-button')
+const mainButton = $('#main-button') // eslint-disable-line
+const peopleList = $('.people-list'); // eslint-disable-line
 const output = []
 
 const pushObjectsIntoMasterArray = (data) => {
@@ -16,7 +17,14 @@ const filterOutNullEmails = (data) => {
 }
 
 const appendPeopleToDOM = (people) => {
-  return people
+  peopleList.html('')
+  people.forEach((person) => {
+    peopleList.append(`
+    <h2>Name: ${person.name}</h2>
+    <p>Email: ${person.email}</p>
+    <p>Signup Date: ${person.signup_date}</p>
+    `)
+  });
 }
 
 const findFiveMostRecentPeople = (data) => {
@@ -46,6 +54,6 @@ const getPeople = () => {
   }
 }
 
-mainButton.addEventListener('click', () => {
+mainButton.on('click', () => {
   getPeople()
 });
