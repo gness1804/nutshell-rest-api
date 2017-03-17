@@ -23,4 +23,23 @@ describe('get /', function () {
         done();
       });
   });
+
+  it('should fail when given an invalid path', function () {
+    request(app)
+      .get('/candybars')
+      .end(function(error, result) {
+        result.should.have.status(404);
+        done();
+      });
+  });
+
+  it('getpeople should be a valid path', function () {
+    request(app)
+      .get('/getpeople/1')
+      .end(function(error, result) {
+       result.should.have.status(200)
+       done();
+     });
+  });
+
 });
