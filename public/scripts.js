@@ -22,8 +22,8 @@ const appendPeopleToDOM = (people) => {
     peopleList.append(`
     <div class="person-container">
       <h2>Name: ${person.name}</h2>
-      <p>Email: ${person.email}</p>
-      <p>Signup Date: ${person.signup_date}</p>
+      <p class="email">Email: ${person.email}</p>
+      <p class="signup">Signup Date: ${person.signup_date}</p>
     </div>
     `)
   });
