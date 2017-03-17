@@ -12,7 +12,7 @@ const pushObjectsIntoMasterArray = (data) => {
 
 const filterOutNullEmails = (data) => {
   return data.filter((obj) => {
-    return obj.email !== null
+    return obj.email !== undefined && obj.email !== null
   })
 }
 
